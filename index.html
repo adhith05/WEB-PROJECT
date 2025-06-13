@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BTECH CHAYAKADA</title>
+  <style>
+  /* Basic CSS for a clean look */
+  body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Slightly modern font */
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8; /* Lighter background */
+  color: #333;
+  line-height: 1.6; /* Improved readability */
+  }
+  header {
+  background-color: #ffb6c1; /* Light Pink */
+  color: white;
+  padding: 1.5em 0; /* More padding */
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  }
+  header h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 2.5em; /* Larger heading */
+  }
+  nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  }
+  nav ul li {
+  display: inline;
+  margin: 0 20px; /* More spacing */
+  }
+  nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth hover effect */
+  }
+  nav ul li a:hover {
+  color: #ffeeee; /* Even lighter pink on hover */
+  }
+  .container {
+  width: 90%; /* Slightly wider container */
+  max-width: 960px; /* Max width for large screens */
+  margin: 30px auto; /* More margin */
+  background-color: white;
+  padding: 30px; /* More padding */
+  box-shadow: 0 0 15px rgba(0,0,0,0.08); /* Softer shadow */
+  border-radius: 8px; /* Rounded corners */
+  }
+  section {
+  margin-bottom: 40px; /* More space between sections */
+  padding: 20px; /* Padding for each section */
+  border-bottom: 1px dashed #eee; /* Subtle separator */
+  }
+  section:last-child {
+  border-bottom: none;
+  }
+  h2 {
+  color: #ff69b4; /* Hot Pink */
+  text-align: center;
+  margin-bottom: 25px; /* More margin */
+  font-size: 2em;
+  position: relative; /* For the underline effect */
+  padding-bottom: 10px;
+  }
+  h2::after { /* Decorative underline */
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #ff69b4;
+  border-radius: 2px;
+  }
+ 
+
+  /* Menu Section */
+  .menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline; /* Align text baselines */
+  border-bottom: 1px dotted #ccc;
+  padding: 12px 0; /* More padding */
+  }
+  .menu-item:last-child {
+  border-bottom: none;
+  }
+  .menu-item h3 {
+  margin: 0;
+  color: #e66465; /* A slightly darker pinkish-red for contrast */
+  font-size: 1.2em;
+  }
+  .menu-item .price {
+  font-weight: bold;
+  color: #ff69b4; /* Hot Pink */
+  font-size: 1.1em;
+  }
+ 
+
+  /* Form Section */
+  .form-group {
+  margin-bottom: 20px; /* More space */
+  }
+  .form-group label {
+  display: block;
+  margin-bottom: 8px; /* More margin */
+  font-weight: bold;
+  color: #555;
+  }
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="date"],
+  .form-group input[type="time"],
+  .form-group input[type="number"],
+  .form-group textarea {
+  width: calc(100% - 20px); /* Account for padding */
+  padding: 10px; /* More padding */
+  border: 1px solid #ddd;
+  border-radius: 5px; /* Slightly more rounded */
+  box-sizing: border-box;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+  }
+  .form-group input:focus,
+  .form-group textarea:focus {
+  border-color: #ff69b4; /* Highlight on focus */
+  outline: none;
+  }
+  button {
+  background-color: #ff69b4; /* Hot Pink */
+  color: white;
+  padding: 12px 25px; /* More padding */
+  border: none;
+  border-radius: 5px; /* Slightly more rounded */
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  display: block; /* Make button full width */
+  width: 100%;
+  }
+  button:hover {
+  background-color: #e04b90; /* Darker Pink on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  }
+ 
+
+  /* About Section */
+  .about-content {
+  text-align: center;
+  }
+  .about-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px; /* More margin */
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Add shadow to image */
+  }
+  .about-content p {
+  font-size: 1.1em;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+  }
+ 
+
+  footer {
+  text-align: center;
+  padding: 25px; /* More padding */
+  background-color: #ffb6c1; /* Light Pink */
+  color: white;
+  margin-top: 40px; /* More margin */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  }
+  footer p {
+  margin: 0;
+  font-size: 0.9em;
+  }
+ 
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+  header h1 {
+  font-size: 2em;
+  }
+  nav ul li {
+  margin: 0 10px;
+  }
+  .container {
+  width: 95%;
+  margin: 20px auto;
+  padding: 15px;
+  }
+  h2 {
+  font-size: 1.8em;
+  }
+  .menu-item h3 {
+  font-size: 1.1em;
+  }
+  .menu-item .price {
+  font-size: 1em;
+  }
+  button {
+  padding: 10px 20px;
+  font-size: 1em;
+  }
+  }
+ 
+
+  @media (max-width: 480px) {
+  header {
+  padding: 1em 0;
+  }
+  header h1 {
+  font-size: 1.8em;
+  }
+  nav ul li {
+  display: block; /* Stack nav items */
+  margin: 10px 0;
+  }
+  .container {
+  width: 95%;
+  padding: 10px;
+  }
+  section {
+  padding: 10px 0;
+  }
+  h2 {
+  font-size: 1.5em;
+  }
+  .form-group input,
+  .form-group textarea {
+  width: calc(100% - 16px); /* Adjust for smaller padding */
+  padding: 8px;
+  }
+  }
+  </style>
+ </head>
+ <body>
+ 
+
+  <header>
+  <h1>Welcome to BTECH CHAYAKADA</h1>
+  <nav>
+  <ul>
+  <li><a href="#about">About Us</a></li>
+  <li><a href="#menu">Menu</a></li>
+  <li><a href="#reservations">Reservations</a></li>
+  </ul>
+  </nav>
+  </header>
+ 
+
+  <div class="container">
+  <section id="about">
+  <h2>About Our Shop</h2>
+  <div class="about-content">
+  <img src="https://images.pexels.com/photos/312418/pexels-photo-312418.jpeg" alt="Coffee shop interior" height="50" width="50%">
+  <p>We are a cozy spot dedicated to serving fresh, delicious coffee and pastries. Come relax and enjoy our welcoming atmosphere!</p>
+  </div>
+  </section>
+ 
+
+  <section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-item">
+  <h3>Filter Coffee</h3>
+  <span class="price">₹100</span>
+  </div>
+  <div class="menu-item">
+  <h3>Masala Chai</h3>
+  <span class="price">₹80</span>
+  </div>
+  <div class="menu-item">
+  <h3>Lemon Tea</h3>
+  <span class="price">₹70</span>
+  </div>
+  <div class="menu-item">
+  <h3>Puffs (Veg/Egg/Chicken)</h3>
+  <span class="price">₹60 - ₹90</span>
+  </div>
+  <div class="menu-item">
+  <h3>Samosa (2 pcs)</h3>
+  <span class="price">₹50</span>
+  </div>
+  <div class="menu-item">
+  <h3>Banana Fritters (Ethakka Appam)</h3>
+  <span class="price">₹40</span>
+  </div>
+  <div class="menu-item">
+  <h3>Vada (2 pcs)</h3>
+  <span class="price">₹40</span>
+  </div>
+  </section>
+ 
+
+  <section id="reservations">
+  <h2>Book a Table</h2>
+  <form action="#" method="POST">
+  <div class="form-group">
+  <label for="name">Your Name:</label>
+  <input type="text" id="name" name="name" placeholder="John Doe" required>
+  </div>
+  <div class="form-group">
+  <label for="email">Your Email:</label>
+  <input type="email" id="email" name="email" placeholder="you@example.com" required>
+  </div>
+  <div class="form-group">
+  <label for="date">Preferred Date:</label>
+  <input type="date" id="date" name="date" required>
+  </div>
+  <div class="form-group">
+  <label for="time">Preferred Time:</label>
+  <input type="time" id="time" name="time" required>
+  </div>
+  <div class="form-group">
+  <label for="guests">Number of Guests:</label>
+  <input type="number" id="guests" name="guests" min="1" max="10" value="1" required>
+  </div>
+  <div class="form-group">
+  <label for="message">Special Requests (optional):</label>
+  <textarea id="message" name="message" rows="4" placeholder="e.g., specific table, dietary restrictions"></textarea>
+  </div>
+  <button type="submit">Submit Reservation</button>
+  </form>
+  </section>
+  </div>
+ 
+
+  <footer>
+  <p>&copy; 2025 BTECH CHAYAKADA. All rights reserved.</p>
+  <p>Crafted with love for coffee lovers!</p>
+  </footer>
+ 
+
+ </body>
+ </html>
